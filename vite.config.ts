@@ -4,10 +4,15 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/radiant-dev-display/', // Add this line - must match your repository name
+  base: process.env.NODE_ENV === 'production' ? '/radiant-dev-display/' : '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: true
+  }
 })
