@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/radiant-dev-display/',
+  base: process.env.NODE_ENV === 'production' ? '/radiant-dev-display/' : '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
