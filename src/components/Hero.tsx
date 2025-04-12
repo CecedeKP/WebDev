@@ -1,4 +1,3 @@
-
 import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
@@ -30,10 +29,12 @@ const Hero = () => {
           </div>
           <div className="order-1 md:order-2 flex justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-tr from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
-              <div className="w-52 h-52 md:w-72 md:h-72 bg-white rounded-full shadow-lg flex items-center justify-center">
-                <div className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                  WD
-                </div>
+              <div className="w-52 h-52 md:w-72 md:h-72 bg-white rounded-full shadow-lg overflow-hidden">
+                <img 
+                  src="/ID photo.jpg" 
+                  alt="Profile picture"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
