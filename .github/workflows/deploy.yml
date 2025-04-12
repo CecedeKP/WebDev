@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
@@ -27,7 +27,7 @@ jobs:
           VITE_BASE_URL: /radiant-dev-display/
           
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
