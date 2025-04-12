@@ -13,11 +13,14 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -28,13 +31,10 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          VITE_BASE_URL: /radiant-dev-display/
-          
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
           clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
