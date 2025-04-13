@@ -14,7 +14,7 @@ const Footer = () => {
             and modern web technologies
           </p>
           <p className="text-sm text-gray-300">
-            &copy; {currentYear} Portfolio. All rights reserved.
+            &copy; {currentYear} Nicolas. All rights reserved.
           </p>
         </div>
       </div>
