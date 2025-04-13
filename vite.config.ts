@@ -4,15 +4,10 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/WebDev/', // Add this line - must match your repository name
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-    sourcemap: true
-  }
 })
